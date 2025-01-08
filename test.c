@@ -26,5 +26,5 @@ void print_array(int * array, int size, int index)
     {
         printf("%d, ", array[i]);
     }
-    printf("%d}\n", array[9]);
+    printf("%d}\n", array[size - 1]);
 }
