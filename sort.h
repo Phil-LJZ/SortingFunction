@@ -24,7 +24,7 @@ void print_array(int *, int, int);
 void sort(int * array, int size)
 {
     // 降序排序函数
-    
+
     int p;
     bool sorting_completed = false;
     int sorted_number = 0;
@@ -33,26 +33,33 @@ void sort(int * array, int size)
 
     while (!sorting_completed)
     {
-        for(index = 0, sorted_number = 0; index < size - 1; index++)
+        if (size > 1)
         {
-            if (array[index] < array[index + 1])
+            for(index = 0, sorted_number = 0; index < size - 1; index++)
             {
-                p = array[index];
-                array[index] = array[index + 1];
-                array[index + 1] = p;
+                if (array[index] < array[index + 1])
+                {
+                    p = array[index];
+                    array[index] = array[index + 1];
+                    array[index + 1] = p;
+                }
+                if (array[size - 1 - index - 1] < array[size - 1 - index])
+                {
+                    sorted_number--;
+                }
+                else
+                {
+                    sorted_number++;
+                }
+                if (sorted_number == (size - 1))
+                {
+                    sorting_completed = true;
+                }
             }
-            if (array[size - 1 - index - 1] < array[size - 1 - index])
-            {
-                sorted_number--;
-            }
-            else
-            {
-                sorted_number++;
-            }
-            if (sorted_number == (size - 1))
-            {
-                sorting_completed = true;
-            }
+        }
+        else
+        {
+            sorting_completed = true;
         }
         print_array(array, size, count);
         count++;
