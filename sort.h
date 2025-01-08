@@ -39,7 +39,7 @@ void sort(int * array, int size)
                 array[index] = array[index + 1];
                 array[index + 1] = p;
             }
-            if (array[size - 1 - index - 1] <= array[size - 1 - index])
+            if (array[size - 1 - index - 1] < array[size - 1 - index])
             {
                 sorted_number--;
             }
