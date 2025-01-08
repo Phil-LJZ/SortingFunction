@@ -23,6 +23,8 @@ void print_array(int *, int, int);
 
 void sort(int * array, int size)
 {
+    // 降序排序函数
+    
     int p;
     bool sorting_completed = false;
     int sorted_number = 0;
